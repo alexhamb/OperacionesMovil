@@ -9,4 +9,8 @@
     <string name="titulo">TITLE</string>
     <string name="mensaje_error_uno">"Type Number "</string>
     <string name="mensaje_error_dos">type Number</string>
+    <string name="suma">sum</string>
+    <string name="resta">subtraction</string>
+    <string name="multiplicacion">multiplication</string>
+    <string name="division">division</string>
 </resources>
