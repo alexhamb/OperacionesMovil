@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.security.PrivateKey;
 
@@ -33,6 +34,7 @@ public class Principal extends AppCompatActivity {
         operaciones.setAdapter(adapter);
     }
     public boolean validar() {
+        int posicion = operaciones.getSelectedItemPosition();
         if (n1.getText().toString().isEmpty()) {
             n1.setError(resources.getString(R.string.mensaje_error_uno));
             return false;
@@ -41,13 +43,18 @@ public class Principal extends AppCompatActivity {
             n2.setError(resources.getString(R.string.mensaje_error_dos));
             return false;
         }
+
+        if ((Integer.parseInt(n2.getText().toString()) == 0) && (posicion == 3)){
+            Toast.makeText(this, resources.getString(R.string.mensaje_error_tres), Toast.LENGTH_SHORT).show();
+        return false;
+    }
         return true;
     }
 
     public void calcular(View v) {
         int opcion;
         double num1, num2, resultado=0;
-
+        res.setText("");
         if (validar()) {
 
             opcion = operaciones.getSelectedItemPosition();
@@ -70,7 +77,7 @@ public class Principal extends AppCompatActivity {
                     break;
             }
 
-            res.setText("" + resultado);
+            res.setText("" +String.format("%.2f", resultado));
 
         }
     }
@@ -79,6 +86,7 @@ public class Principal extends AppCompatActivity {
         n1.setText("");
         n2.setText("");
         n1.requestFocus();
+        operaciones.setSelection(0);
 
 
 

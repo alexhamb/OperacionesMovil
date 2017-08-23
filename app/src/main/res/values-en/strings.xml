@@ -13,4 +13,5 @@
     <string name="resta">subtraction</string>
     <string name="multiplicacion">multiplication</string>
     <string name="division">division</string>
+    <string name="mensaje_error_tres">Not gross, can not divide between zero</string>
 </resources>

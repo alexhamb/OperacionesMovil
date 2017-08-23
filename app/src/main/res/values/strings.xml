@@ -18,4 +18,6 @@
         <item>@string/multiplicacion</item>
         <item>@string/division</item>
     </string-array>
+    <string name="mensaje_error_tres">No sea bruto, no puede dividir entre cero</string>
+
 </resources>
